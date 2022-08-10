@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import {Application} from "./application";
 
-ReactDOM.render(<h3>Hello</h3> , document.getElementById("app"));
+
+ReactDOM.render(<Application /> , document.getElementById("app"));
