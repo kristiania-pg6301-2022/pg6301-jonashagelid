@@ -15,6 +15,8 @@ export function LoginCallback() {
             },
             body: JSON.stringify({access_token})
         });
+
+
         navigate("/");
     })
 

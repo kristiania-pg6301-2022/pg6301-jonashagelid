@@ -1,18 +1,13 @@
 import {fetchJSON} from "./index";
-import {useLoader} from "./application";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
+import {Chatlog} from "./chatlog";
+import {useLoader} from "./useLoader";
 
-function ChatMessage({ message: { user, message } }) {
-    return (
-        <>
-            <h3>{user}</h3>
-            <div>{message}</div>
-        </>
-    );
-}
+
 
 export function AddMessage() {
+
     const [user, setUser] = useState();
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
@@ -21,20 +16,25 @@ export function AddMessage() {
         return await fetchJSON("/api/login")
     });
 
+
     async function handleSubmit(e) {
         setUser(JSON.stringify(data.name))
+        console.log({user})
         e.preventDefault();
         await fetchJSON("/api/chat", {
             method: "post",
             json: { user, message },
         });
-        setUser();
         setMessage("");
         navigate("/");
+
+
     }
 
     return (
         <div>
+
+            <Chatlog />
             <form onSubmit={handleSubmit}>
                 <h1>Add message</h1>
                 <div>

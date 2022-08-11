@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {Application} from "./application";
+import {Chatlog} from "./chatlog";
 
 
 export async function fetchJSON(url, options = {}) {
