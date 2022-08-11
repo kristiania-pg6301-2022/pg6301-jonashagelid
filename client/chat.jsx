@@ -12,9 +12,12 @@ export function AddMessage() {
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
 
+
+
     const {loading, data, error} = useLoader(async () =>{
         return await fetchJSON("/api/login")
     });
+
 
 
     async function handleSubmit(e) {
@@ -33,7 +36,6 @@ export function AddMessage() {
 
     return (
         <div>
-
             <Link to={"/"}>Back</Link>
             <h1>Chat app</h1>
             <Chatlog />
