@@ -58,7 +58,7 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 * [x] Kommunikasjon mellom frontend (React) og backend (Express)
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] Deployment til Heroku
-  * *Heroku kjører noen ganger som det skal, andre ganger kræsjer den med en gang, rakk dessverre ikke å finne ut hva det skyldes*
+  * *Heroku klarer av en eller annen grunn ikke å laste inn eller sende meldinger til mongodb, dette fungerer helt fint i local, men rakk ikke å finne ut hva som var problemet på heroku*
 * [x] Bruk av MongoDB
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [x] OpenID Connect
