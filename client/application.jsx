@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {FrontPage} from "./frontPage";
 import {Login} from "./login";
 import {LoginCallback} from "./loginCallback";
-import {Chat, ListChats} from "./chat";
+import {AddMessage, Chat, ListChats} from "./chat";
 import React, {useEffect, useState} from "react";
 import {fetchJSON} from "./index";
 
@@ -59,7 +59,7 @@ export function Application() {
                 <Route path={"/"} element={<FrontPage/>}/>
                 <Route path={"/login"} element={<Login/>}/>
                 <Route path={"/login/callback"} element={<LoginCallback/>}/>
-                <Route path={"/chat"} element={<ListChats/>}/>
+                <Route path={"/chat"} element={<AddMessage/>}/>
                 <Route path={"/profile"} element={<Profile/>}/>
             </Routes>
         </BrowserRouter>

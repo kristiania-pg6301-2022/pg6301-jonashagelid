@@ -1,15 +1,34 @@
 import { Router } from "express";
 
+const messages = [
+    {
+        user: "bob",
+        message: "hei",
+    },
+    {
+        user: "dave",
+        message: "okei",
+    },
+];
+
+
 export function ChatApi(mongoDatabase) {
     const router = new Router();
 
     router.get("/", async (req, res) => {
-        const chats = await mongoDatabase.collection("messages").find().toArray();
-        res.json(chats);
+        const messages = await mongoDatabase
+            .collection("messages")
+            .find()
+            .map(({ user, message }) => ({ user, message }))
+            .toArray();
+        res.json(messages);
     });
 
-    router.post("/new", (req, res) => {
-        res.sendStatus(500);
+    router.post("/", (req, res) => {
+        const { user, message } = req.body;
+        messages.push({ user, message});
+        mongoDatabase.collection("messages").insertOne({ user, message});
+        res.sendStatus(204);
     });
 
     return router;

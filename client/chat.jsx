@@ -1,5 +1,7 @@
 import {fetchJSON} from "./index";
 import {useLoader} from "./application";
+import {useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 function ChatMessage({ message: { user, message } }) {
     return (
@@ -10,34 +12,36 @@ function ChatMessage({ message: { user, message } }) {
     );
 }
 
-export function ListChats() {
-    const { loading, error, data } = useLoader(async () =>
-        fetchJSON("/api/chat")
-    );
+export function AddMessage() {
+    const [user, setUser] = useState();
+    const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-    if (error) {
-        return (
-            <div>
-                <h1>Error</h1>
-                <div>{error.toString()}</div>
-            </div>
-        );
+    const {loading, data, error} = useLoader(async () =>{
+        return await fetchJSON("/api/login")
+    });
+
+    async function handleSubmit(e) {
+        setUser(JSON.stringify(data.name))
+        e.preventDefault();
+        await fetchJSON("/api/chat", {
+            method: "post",
+            json: { user, message },
+        });
+        setUser();
+        setMessage("");
+        navigate("/");
     }
 
     return (
         <div>
-            <h1>Messages</h1>
-
-            {data.map((messages) => (
-                <ChatMessage key={messages.user} message={messages} />
-            ))}
+            <form onSubmit={handleSubmit}>
+                <h1>Add message</h1>
+                <div>
+                    <input value={message} onChange={(e) => setMessage(e.target.value)} />
+                </div>
+                <button>Submit</button>
+            </form>
         </div>
     );
-}
-
-export function Chat() {
-    return null;
 }
