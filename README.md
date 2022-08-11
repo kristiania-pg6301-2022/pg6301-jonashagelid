@@ -1,6 +1,6 @@
-# PG6301 eksamen <tittel på løsningen>
+# PG6301 eksamen <Chat app>
 
-[Heroku](link til heroku)
+[Heroku](https://pg6301konte-jonashagelid.herokuapp.com/)
 [Test rapport](link til testrapport)
 
 ## Tips
@@ -24,26 +24,43 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 
 ## Egenutfylling av funksjonelle krav
 
-* [ ] *legg inn krav fra eksamentekst*
+* [ ] *Anonyme brukere skal ikke kunne se chatloggen, men skal kunne logge seg inn*
+  * *kan logge inn, men alltid synlig*
+* [x] *Brukere kan logge seg inn. Det anbefales at du implementerer at brukerne logger seg inn med Google, men andre
+  mekanismer er også akseptabeltt*
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] *legg inn krav fra eksamentekst*
+* [x] *En bruker som er logget inn kan se på sin profilside (userinfo fra Google)*
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+* [x] *Innloggede brukere skal kunne sende chatmeldinger*
+  * *beskriv eventuelle mangler eller problemer for delvis uttelling*  
+* [x] *Meldinger som sendes inn skal lagres i Mongodb*
+  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+* [ ] *Innloggede brukere skal kunne se chatmeldinger umiddelbart. Bruk websockets for å hente oppdateringer*
+  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+* [x] *Chatmeldinger skal inneholde navnet på brukeren som skrev dem. Navnet skal hentes fra identity provider (Google, Active
+  Directory)*
+  * *Appen husker dårlig og glemmer å legge til navn etter refresh*
+* [x] *Brukere skal forbli logget inn når de refresher websiden*
+  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+* [x] *Alle feil fra serves skal presenteres til bruker på en pen måte, med mulighet for brukeren til å prøve igjen*
+  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
+  
 
 ## Egenutfylling av tekniske krav
 
-* [ ] Oppsett av package.json, parcel, express, prettier
+* [x] Oppsett av package.json, parcel, express, prettier
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] React Router
+* [x] React Router
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Express app
+* [x] Express app
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Kommunikasjon mellom frontend (React) og backend (Express)
+* [x] Kommunikasjon mellom frontend (React) og backend (Express)
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Deployment til Heroku
+* [x] Deployment til Heroku
+  * *Den ser ut til å fungere noen ganger, men et eller annet får den til å kræsje, og jeg er noe usikker på hva da den kjører helt fint på localhost*
+* [x] Bruk av MongoDB
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] Bruk av MongoDB
-  * *beskriv eventuelle mangler eller problemer for delvis uttelling*
-* [ ] OpenID Connect
+* [x] OpenID Connect
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
 * [ ] Web Sockets
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*

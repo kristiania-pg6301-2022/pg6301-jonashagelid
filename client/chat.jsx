@@ -1,6 +1,6 @@
 import {fetchJSON} from "./index";
-import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
+import React, {useState} from "react";
 import {Chatlog} from "./chatlog";
 import {useLoader} from "./useLoader";
 
@@ -34,9 +34,11 @@ export function AddMessage() {
     return (
         <div>
 
+            <Link to={"/"}>Back</Link>
+            <h1>Chat app</h1>
             <Chatlog />
             <form onSubmit={handleSubmit}>
-                <h1>Add message</h1>
+                <h3>Add message</h3>
                 <div>
                     <input value={message} onChange={(e) => setMessage(e.target.value)} />
                 </div>

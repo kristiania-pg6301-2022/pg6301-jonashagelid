@@ -1,12 +1,17 @@
 import {Link} from "react-router-dom";
 import React from "react";
+import {AddMessage} from "./chat";
+
+
 
 export function FrontPage() {
+
+
     return <div>
-        <h3>Chat app</h3>
+        <h1>Chat app</h1>
         <diV><Link to={"/login"}>Login</Link></diV>
         <diV><Link to={"/chat"}>Chat</Link></diV>
-        <diV><Link to={"/profile"}>profile</Link></diV>
+        <diV><Link to={"/profile"}>Profile</Link></diV>
 
     </div>;
 }
