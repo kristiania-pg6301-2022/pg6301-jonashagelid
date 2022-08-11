@@ -2,6 +2,7 @@
 
 [Heroku](https://pg6301konte-jonashagelid.herokuapp.com/)
 [Test rapport](link til testrapport)
+[Github](https://github.com/kristiania-pg6301-2022/pg6301konte-jonashagelid)
 
 ## Tips
 
@@ -25,7 +26,7 @@ Dette er versjonene vi brukte under forelesningene om som er validert som ok:
 ## Egenutfylling av funksjonelle krav
 
 * [ ] *Anonyme brukere skal ikke kunne se chatloggen, men skal kunne logge seg inn*
-  * *kan logge inn, men alltid synlig*
+  * **
 * [x] *Brukere kan logge seg inn. Det anbefales at du implementerer at brukerne logger seg inn med Google, men andre
   mekanismer er også akseptabeltt*
   * *beskriv eventuelle mangler eller problemer for delvis uttelling*
