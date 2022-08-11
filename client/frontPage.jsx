@@ -6,5 +6,7 @@ export function FrontPage() {
         <h3>Chat app</h3>
         <diV><Link to={"/login"}>Login</Link></diV>
         <diV><Link to={"/chat"}>Chat</Link></diV>
+        <diV><Link to={"/profile"}>profile</Link></diV>
+
     </div>;
 }
